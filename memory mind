@@ -1,0 +1,38 @@
+//python
+
+class MemoryStack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
+        else:
+            return None
+
+    def is_empty(self):
+        return len(self.stack) == 0
+
+    def __str__(self):
+        return str(self.stack)
+
+
+# Example usage:
+memory = MemoryStack()
+
+# Push some memories onto the stack
+memory.push("Memory 1")
+memory.push("Memory 2")
+memory.push("Memory 3")
+
+# Print the current stack
+print(memory)  # Output: ['Memory 1', 'Memory 2', 'Memory 3']
+
+# Pop memories from the stack
+print(memory.pop())  # Output: Memory 3
+print(memory.pop())  # Output: Memory 2
+print(memory.pop())  # Output: Memory 1
+print(memory.pop())  # Output: None (stack is empty)
